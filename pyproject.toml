@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "edu-project-2"
+version = "0.1.0"
+description = ""
+authors = ["Dmitrii Grechko <prime.optimys@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
