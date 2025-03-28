@@ -12,7 +12,14 @@ class AbstractSaver(ABC):
     @abstractmethod
     def save_to_file(self, vacancies_list: Sequence[Union[Dict[str, Any], "Vacancy"]]) -> None:
         """
-        Метод сохранения вакансий в файл
+        Метод добавления вакансий в файл
+        """
+        pass
+
+    @abstractmethod
+    def save_to_file_rw(self, vacancies_list: Sequence[Union[Dict[str, Any], "Vacancy"]]) -> None:
+        """
+        Метод сохранения вакансий в файл c перезаписью
         """
         pass
 

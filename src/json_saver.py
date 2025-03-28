@@ -17,9 +17,9 @@ class JSONSaver(AbstractSaver):
     vacancies_list_dict: List[Dict[str, Any]]
 
     @classmethod
-    def save_to_file(cls, vacancies_list: Sequence[Union[Dict[str, Any], "Vacancy"]]) -> None:
+    def save_to_file_rw(cls, vacancies_list: Sequence[Union[Dict[str, Any], "Vacancy"]]) -> None:
         """
-        Метод сохранения данных в файл
+        Метод сохранения данных в файл c перезаписью
         """
         if all(isinstance(vacancy, dict) for vacancy in vacancies_list):
             with open(cls.file_name, "w", encoding="utf-8") as file:
@@ -33,6 +33,25 @@ class JSONSaver(AbstractSaver):
             raise TypeError("Тип входных данных не соответствует требованиям")
 
     @classmethod
+    def save_to_file(cls, vacancies_list: Sequence[Union[Dict[str, Any], "Vacancy"]]) -> None:
+        """
+        Метод добавления данных в файл
+        """
+        if all(isinstance(vacancy, dict) for vacancy in vacancies_list):
+            vacancies_list_only_dict = [vacancy for vacancy in vacancies_list if isinstance(vacancy, dict)]
+            extend_list = cls.load_from_file() + vacancies_list_only_dict
+            with open(cls.file_name, "w", encoding="utf-8") as file:
+                json.dump(extend_list, file, ensure_ascii=False, indent=4)  # type: ignore
+        elif all(isinstance(vacancy, Vacancy) for vacancy in vacancies_list):
+            vacancies_list_only_vacancies = [vacancy for vacancy in vacancies_list if isinstance(vacancy, Vacancy)]
+            cls.vacancies_list_dict = cls.obj_vacancy_to_list(vacancies_list_only_vacancies)
+            extend_list = cls.load_from_file() + cls.vacancies_list_dict
+            with open(cls.file_name, "w", encoding="utf-8") as file:
+                json.dump(extend_list, file, ensure_ascii=False, indent=4)  # type: ignore
+        else:
+            raise TypeError("Тип входных данных не соответствует требованиям")
+
+    @classmethod
     def add_vacancy(cls, vacancy: "Vacancy") -> None:
         """
         Метод добавления вакансии в файл
@@ -40,7 +59,7 @@ class JSONSaver(AbstractSaver):
         data = cls.obj_vacancy_to_list([vacancy])[0]
         data_from_file = cls.load_from_file()
         data_from_file.append(data)
-        cls.save_to_file(data_from_file)
+        cls.save_to_file_rw(data_from_file)
 
     @classmethod
     def delete_vacancy(cls, vacancy: "Vacancy") -> None:
@@ -54,7 +73,7 @@ class JSONSaver(AbstractSaver):
         except ValueError:
             print("Элемент для удаления не найден")
         else:
-            cls.save_to_file(data_from_file)
+            cls.save_to_file_rw(data_from_file)
 
     @classmethod
     def load_from_file(cls) -> List[Dict[str, Any]]:
@@ -64,6 +83,8 @@ class JSONSaver(AbstractSaver):
         try:
             with open(cls.file_name, "r", encoding="utf-8") as file:
                 cls.vacancies_list = json.load(file)
+        except json.decoder.JSONDecodeError:
+            cls.vacancies_list = []
         except FileNotFoundError:
             cls.vacancies_list = []
         return cls.vacancies_list
