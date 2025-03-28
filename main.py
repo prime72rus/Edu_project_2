@@ -1,24 +1,18 @@
 from src.external_api_hh import HeadHunterAPI
+from src.json_saver import JSONSaver
 from src.vacancies import Vacancy
 
 
 def main() -> None:
     vacancies = HeadHunterAPI()
     list_vacancies = vacancies.get_vacancies("Инженер АСУ ТП")
-    # data = json.dumps(vacancies.vacancies[0], ensure_ascii=False, indent=4)
-    # data = vacancies.vacancies[0]
-    # print(data)
-    # vac1 = Vacancy(data)
-    # print(vac1)
     list_data = Vacancy.cast_to_object_list(list_vacancies)
-    print(list_data[0].salary)
-    print(list_data[1].salary)
-    print(list_data[0] > list_data[1])
-    print(list_data[0] < list_data[1])
-    print(list_data[0] >= list_data[1])
-    print(list_data[0] <= list_data[1])
-    print(list_data[0] == list_data[1])
-    print(list_data[0] != list_data[1])
+    json_saver = JSONSaver()
+    # json_saver.save_to_file(list_vacancies)
+    json_saver.save_to_file(list_data)
+    vacancy = Vacancy("Вакансия", "https://url.url", 500000, "RUB", "Дрессировщик", "Ни чего не делать")
+    json_saver.add_vacancy(vacancy)
+    json_saver.delete_vacancy(vacancy)
 
 
 if __name__ == "__main__":

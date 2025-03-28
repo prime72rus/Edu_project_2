@@ -8,8 +8,15 @@ class Vacancy:
     Класс содержащий информацию о вакансии
     """
 
+    name: str
+    url: str
+    salary: int
+    currency: str
+    professional_roles: str
+    responsibility: str
+
     def __init__(
-        self, name: str, url: str, salary: int, currency: str, professional_role: str, responsibility: str
+        self, name: str, url: str, salary: int, currency: str, professional_roles: str, responsibility: str
     ) -> None:
         """
         Конструктор класса Vacancy
@@ -18,7 +25,7 @@ class Vacancy:
         self.url = url
         self.salary = self.valid_salary(salary)
         self.currency = self.valid_currency(currency)
-        self.professional_role = professional_role
+        self.professional_roles = professional_roles
         self.responsibility = responsibility
 
     @staticmethod
@@ -49,7 +56,7 @@ class Vacancy:
             f"Вакансия: {self.name}\n"
             f"Url: {self.url}\n"
             f"Зарплата: {self.salary} {self.currency}\n"
-            f"Профессиональные роли: {self.professional_role}\n"
+            f"Профессиональные роли: {self.professional_roles}\n"
             f"Обязанности: {self.responsibility}"
         )
 
@@ -62,12 +69,12 @@ class Vacancy:
         list_object_vacancies: List[Vacancy] = []
         for vacancy in vacancy_data:
             name = vacancy.get("name", "Не указано")
-            url = vacancy.get("area", {}).get("url", "Не указано")
+            url = vacancy.get("alternate_url", "Не указано")
             salary_data = vacancy.get("salary", {})
             salary = cls.valid_salary(salary_data.get("from"))
             currency = cls.valid_currency(salary_data.get("currency"))
-            professional_roles = vacancy.get("professional_roles", [])
-            professional_role = " ".join(role.get("name", "Не указано") for role in professional_roles)
+            professional_role = vacancy.get("professional_roles", [])
+            professional_roles = ", ".join(role.get("name", "Не указано") for role in professional_role)
             responsibility = vacancy.get("snippet", {}).get("responsibility", "Не указано")
 
             list_object_vacancies.append(
@@ -76,7 +83,7 @@ class Vacancy:
                     url=url,
                     salary=salary,
                     currency=currency,
-                    professional_role=professional_role,
+                    professional_roles=professional_roles,
                     responsibility=responsibility,
                 )
             )

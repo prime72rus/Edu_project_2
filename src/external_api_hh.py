@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict, List
 
 import requests
 
@@ -16,9 +16,9 @@ class HeadHunterAPI(AbstractAPI):
         self.__url: str = "https://api.hh.ru/vacancies"
         self.__headers: dict[str, str] = {"User-Agent": "HH-User-Agent"}
         self.params: dict[str, Any] = {"text": "", "page": 0, "per_page": 100, "only_with_salary": True}
-        self.vacancies: list[dict] = []
+        self.vacancies: List[Dict[str, Any]] = []
 
-    def get_vacancies(self, search_query: str) -> list[dict]:
+    def get_vacancies(self, search_query: str) -> List[Dict[str, Any]]:
         count_error_request = 3
         self.params["text"] = search_query
         while self.params.get("page") != 1:
