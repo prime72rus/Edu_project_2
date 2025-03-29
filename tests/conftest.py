@@ -29,3 +29,13 @@ def setup_test_file():
     if test_file.exists():
         test_file.unlink()
     return test_file
+
+
+@pytest.fixture
+def vacancies_list():
+    return [
+        Vacancy("Python Dev", "https://example.com", 100000, "RUR", "Backend", "Developing applications"),
+        Vacancy("Java Dev", "https://example.org", 150000, "USD", "Frontend", "Creating solutions"),
+        Vacancy("C++ Dev", "https://example.net", 50000, "EUR", "Backend", "Code optimization"),
+        Vacancy("Frontend Dev", "https://example.io", 120000, "RUR", "Frontend", "Developing UI"),
+    ]
