@@ -8,7 +8,7 @@ def main() -> None:
     hh_api = HeadHunterAPI()
     hh_vacancies = hh_api.get_vacancies("Инженер АСУ ТП")
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
-    vacancy = Vacancy("Вакансия", "https://url.url", 500000, "RUB", "Дрессировщик", "Ни чего не делать")
+    vacancy = Vacancy("Java Dev", "https://example.org", 120000, "USD", "Frontend", "Design")
     json_saver = JSONSaver()
     json_saver.add_vacancy(vacancy)
     # json_saver.delete_vacancy(vacancy)
@@ -18,7 +18,6 @@ def main() -> None:
     data = json_saver.load_from_file()
     list_vacancies = Vacancy.cast_to_object_list(data)
     print_vacancies(list_vacancies)
-
 
 
 if __name__ == "__main__":
