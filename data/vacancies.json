@@ -1,161 +1,5 @@
 [
     {
-        "name": "ML engineer (middle+)",
-        "alternate_url": "https://hh.ru/vacancy/118910394",
-        "salary": {
-            "from": 500000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Дата-сайентист"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Разработка, обучение и оптимизация нейросетевых моделей для задач компьютерного зрения (обнаружение объектов, сегментация, классификация с видеопоток). Подготовка данных: контроль разметки..."
-        }
-    },
-    {
-        "name": "Руководитель разработки (СТО)",
-        "alternate_url": "https://hh.ru/vacancy/118899234",
-        "salary": {
-            "from": 500000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Другое"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Влияние на процессы: У нас вы сможете не только выполнять задачи, но и активно участвовать в формировании процессов, внося свой..."
-        }
-    },
-    {
-        "name": "Руководитель управления аналитики",
-        "alternate_url": "https://hh.ru/vacancy/118752543",
-        "salary": {
-            "from": 350000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Руководитель отдела аналитики"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Выстраивать стратегию, цели, дорожной карты управления аналитики. Управлять командой аналитиков: найм новых сотрудников, развитие и обучение, обеспечение мотивации и вовлеченности..."
-        }
-    },
-    {
-        "name": "Python developer",
-        "alternate_url": "https://hh.ru/vacancy/118811735",
-        "salary": {
-            "from": 345000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Разработка и поддержка микросервисной архитектуры. -Работа с базами данных для эффективного хранения и обработки данных. -Написание и поддержка юнит-тестов. -"
-        }
-    },
-    {
-        "name": "Junior Data Analyst",
-        "alternate_url": "https://hh.ru/vacancy/118812578",
-        "salary": {
-            "from": 300000,
-            "currency": "KZT"
-        },
-        "professional_roles": [
-            {
-                "name": "BI-аналитик"
-            },
-            {
-                "name": "аналитик данных"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Анализ ключевых метрик бизнеса, выявление закономерностей и аномалий. Автоматизация отчетности SQL, <highlighttext>Python</highlighttext> - в приоритете. Работа с гипотезами: анализ эффективности маркетинговых..."
-        }
-    },
-    {
-        "name": "Специалист по IT",
-        "alternate_url": "https://hh.ru/vacancy/118279002",
-        "salary": {
-            "from": 300000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Системный инженер"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Не указано"
-        }
-    },
-    {
-        "name": "Backend-разработчик (Python)",
-        "alternate_url": "https://hh.ru/vacancy/118874213",
-        "salary": {
-            "from": 300000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Руководство командой разработчиков. Разработка новых и развитие существующих внутренних инструментов и корпоративных сервисов. Автоматизация рабочих процессов. Проектирование и построение модульных..."
-        }
-    },
-    {
-        "name": "Python-разработчик",
-        "alternate_url": "https://hh.ru/vacancy/117783931",
-        "salary": {
-            "from": 256000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Разработка и поддержка микросервисной архитектуры на базе <highlighttext>Python</highlighttext>. Проектирование и реализация 12-факторных приложений. Интеграция с различными системами и сервисами. "
-        }
-    },
-    {
-        "name": "Руководитель проектов",
-        "alternate_url": "https://hh.ru/vacancy/118663212",
-        "salary": {
-            "from": 250000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Руководитель проектов"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Проект: Новый проект по реализации импортозамещения бортовых развлекательных систем на борту самолета. Задачи: - Согласование функциональности и интерфейса для формирования конечного..."
-        }
-    },
-    {
         "name": "Python-разработчик",
         "alternate_url": "https://hh.ru/vacancy/118833565",
         "salary": {
@@ -172,6 +16,79 @@
         ],
         "snippet": {
             "responsibility": "Разрабатывать и сопровождать backend-приложения и сервисы на <highlighttext>Python</highlighttext> 3 с использованием FastAPI и Django. - Проектировать архитектуру с упором на..."
+        }
+    },
+    {
+        "name": "Разработчик Python",
+        "alternate_url": "https://hh.ru/vacancy/118702008",
+        "salary": {
+            "from": 250000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Разработка backend на Django. Разработка REST сервисов. Разработка async сервисов. Разработка клиентов для работы со сторонними API. Написание unit тестов. "
+        }
+    },
+    {
+        "name": "Программист Python",
+        "alternate_url": "https://hh.ru/vacancy/118362676",
+        "salary": {
+            "from": 190000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Созданием новых сервисов и улучшение существующего backend приложения на <highlighttext>Python</highlighttext>. Участвовать в анализе, проектировании и оценке технических решений вместе с..."
+        }
+    },
+    {
+        "name": "QA-инженер",
+        "alternate_url": "https://hh.ru/vacancy/118807686",
+        "salary": {
+            "from": 150000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Тестировщик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Выполнение ручного функционального тестирования интерфейсов (frontend) и REST API (backend). Проведение регрессионного тестирования, нагрузочных тестов. Развертывание ПО на тестовых стендах..."
+        }
+    },
+    {
+        "name": "Python-разработчик",
+        "alternate_url": "https://hh.ru/vacancy/118863688",
+        "salary": {
+            "from": 100000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Разработка и поддержка backend-приложений на <highlighttext>Python</highlighttext>. - Оптимизация и рефакторинг существующего кода. - Интеграция с внешними API и сторонними сервисами. - "
         }
     }
 ]

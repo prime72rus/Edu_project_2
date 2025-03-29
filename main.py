@@ -18,8 +18,11 @@ def main() -> None:
     hh_vacancies = hh_api.get_vacancies(search_query)
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
-
-    ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
+    try:
+        ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
+    except ValueError as e:
+        print (str(e))
+        ranged_vacancies = filtered_vacancies[:]
 
     sorted_vacancies = sort_vacancies(ranged_vacancies)
     top_vacancies = get_top_vacancies(sorted_vacancies, top_n)
