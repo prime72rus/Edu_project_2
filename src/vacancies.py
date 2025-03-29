@@ -26,7 +26,7 @@ class Vacancy:
         self.salary = self.valid_salary(salary)
         self.currency = self.valid_currency(currency)
         self.professional_roles = professional_roles
-        self.responsibility = responsibility
+        self.responsibility = responsibility if responsibility is not None else "Не указано"
 
     @staticmethod
     def valid_salary(salary_data: Optional[int]) -> int:
