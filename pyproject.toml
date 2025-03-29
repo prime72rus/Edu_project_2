@@ -48,5 +48,5 @@ multi_line_output = 3
 
 [tool.coverage.report]
 exclude_also = [
-    'if __name__ == .__main__.:',
+    "if __name__ == .__main__.:", "pass"
 ]

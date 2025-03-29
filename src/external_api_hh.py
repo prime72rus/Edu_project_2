@@ -31,10 +31,6 @@ class HeadHunterAPI(AbstractAPI):
                     count_error_request -= 1
                     print("Ошибка при запросе к API")
                     continue
-                except requests.exceptions.ConnectionError:
-                    count_error_request -= 1
-                    print("Connection error")
-                    continue
                 else:
                     vacancies = response.json().get("items", [])
                     self.vacancies.extend(vacancies)
