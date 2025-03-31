@@ -7,13 +7,14 @@ class Vacancy:
     """
     Класс содержащий информацию о вакансии
     """
-
-    name: str
-    url: str
-    salary: int
-    currency: str
-    professional_roles: str
-    responsibility: str
+    __slots__ = (
+                    "name",
+                    "url",
+                    "salary",
+                    "currency",
+                    "professional_roles",
+                    "responsibility"
+                 )
 
     def __init__(
         self, name: str, url: str, salary: int, currency: str, professional_roles: str, responsibility: str
@@ -23,13 +24,13 @@ class Vacancy:
         """
         self.name = name
         self.url = url
-        self.salary = self.valid_salary(salary)
-        self.currency = self.valid_currency(currency)
+        self.salary = self.__valid_salary(salary)
+        self.currency = self.__valid_currency(currency)
         self.professional_roles = professional_roles
         self.responsibility = responsibility if responsibility is not None else "Не указано"
 
-    @staticmethod
-    def valid_salary(salary_data: Optional[int]) -> int:
+    @classmethod
+    def __valid_salary(cls, salary_data: Optional[int]) -> int:
         """
         Валидация данных о зарплате.
         Если зарплата не указана, возвращает 0.
@@ -38,8 +39,8 @@ class Vacancy:
             return 0
         return salary_data
 
-    @staticmethod
-    def valid_currency(currency_name: Optional[str]) -> str:
+    @classmethod
+    def __valid_currency(cls, currency_name: Optional[str]) -> str:
         """
         Валидация данных о валюте.
         Если валюта не указана, возвращает "Не указано".
@@ -71,8 +72,8 @@ class Vacancy:
             name = vacancy.get("name", "Не указано")
             url = vacancy.get("alternate_url", "Не указано")
             salary_data = vacancy.get("salary", {})
-            salary = cls.valid_salary(salary_data.get("from"))
-            currency = cls.valid_currency(salary_data.get("currency"))
+            salary = cls.__valid_salary(salary_data.get("from"))
+            currency = cls.__valid_currency(salary_data.get("currency"))
             professional_role = vacancy.get("professional_roles", [])
             professional_roles = ", ".join(role.get("name", "Не указано") for role in professional_role)
             responsibility = vacancy.get("snippet", {}).get("responsibility", "Не указано")

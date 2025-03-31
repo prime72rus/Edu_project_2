@@ -1,62 +1,5 @@
 [
     {
-        "name": "Python-разработчик",
-        "alternate_url": "https://hh.ru/vacancy/118833565",
-        "salary": {
-            "from": 250000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Разрабатывать и сопровождать backend-приложения и сервисы на <highlighttext>Python</highlighttext> 3 с использованием FastAPI и Django. - Проектировать архитектуру с упором на..."
-        }
-    },
-    {
-        "name": "Разработчик Python",
-        "alternate_url": "https://hh.ru/vacancy/118702008",
-        "salary": {
-            "from": 250000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Разработка backend на Django. Разработка REST сервисов. Разработка async сервисов. Разработка клиентов для работы со сторонними API. Написание unit тестов. "
-        }
-    },
-    {
-        "name": "Программист Python",
-        "alternate_url": "https://hh.ru/vacancy/118362676",
-        "salary": {
-            "from": 190000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Созданием новых сервисов и улучшение существующего backend приложения на <highlighttext>Python</highlighttext>. Участвовать в анализе, проектировании и оценке технических решений вместе с..."
-        }
-    },
-    {
         "name": "QA-инженер",
         "alternate_url": "https://hh.ru/vacancy/118807686",
         "salary": {
@@ -73,10 +16,10 @@
         }
     },
     {
-        "name": "Python-разработчик",
-        "alternate_url": "https://hh.ru/vacancy/118863688",
+        "name": "Frontend Developer/React",
+        "alternate_url": "https://hh.ru/vacancy/118807677",
         "salary": {
-            "from": 100000,
+            "from": 0,
             "currency": "RUR"
         },
         "professional_roles": [
@@ -88,7 +31,23 @@
             }
         ],
         "snippet": {
-            "responsibility": "Разработка и поддержка backend-приложений на <highlighttext>Python</highlighttext>. - Оптимизация и рефакторинг существующего кода. - Интеграция с внешними API и сторонними сервисами. - "
+            "responsibility": "Осознанно использовали Redux с middlewares и high-order addons (redux-api, redux-saga, redux-*). Премии за привлечение новых сотрудников и..."
+        }
+    },
+    {
+        "name": "Тестировщик / QA инженер",
+        "alternate_url": "https://hh.ru/vacancy/117161804",
+        "salary": {
+            "from": 0,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Тестировщик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Проведение E2E, функционального, регрессионного тестирования frontend-приложений. Разработка, запуск и поддержка автотестов на JavaScript (Cypress) для web-приложений. "
         }
     }
 ]
