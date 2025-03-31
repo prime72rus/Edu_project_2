@@ -1,7 +1,8 @@
-from pathlib import Path
+import os
 
 import pytest
 
+from src.json_saver import JSONSaver
 from src.vacancies import Vacancy
 
 
@@ -24,11 +25,38 @@ def create_data():
 
 
 @pytest.fixture
-def setup_test_file():
-    test_file = Path("test_vacancies.json")
-    if test_file.exists():
-        test_file.unlink()
-    return test_file
+def json_saver(tmp_path):
+    """Фикстура для создания экземпляра JSONSaver с временным файлом"""
+    test_file = str(tmp_path / "test_vacancies.json")
+    saver = JSONSaver(test_file)
+    yield saver
+    if os.path.exists(test_file):
+        os.remove(test_file)
+
+
+@pytest.fixture
+def sample_vacancy():
+    """Фикстура для создания тестовой вакансии"""
+    return Vacancy(
+        name="Python Developer",
+        url="https://example.com",
+        salary=100000,
+        currency="RUR",
+        professional_roles="Developer, Backend",
+        responsibility="Write code",
+    )
+
+
+@pytest.fixture
+def sample_vacancy_dict():
+    """Фикстура для создания тестового словаря вакансии"""
+    return {
+        "name": "Python Developer",
+        "alternate_url": "https://example.com",
+        "salary": {"from": 100000, "currency": "RUR"},
+        "professional_roles": [{"name": "Developer"}, {"name": "Backend"}],
+        "snippet": {"responsibility": "Write code"},
+    }
 
 
 @pytest.fixture

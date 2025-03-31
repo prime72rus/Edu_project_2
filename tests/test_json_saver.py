@@ -1,220 +1,159 @@
 import json
-from pathlib import Path
+import os
+
+import pytest
 
 from src.json_saver import JSONSaver
-from src.vacancies import Vacancy
 
 
-def test_save_to_file_rw(create_vacancy_1, create_vacancy_2, setup_test_file):
+def test_save_to_file_rw_with_dict(json_saver, sample_vacancy_dict):
     """
-    Тест сохранения данных в файл с перезаписью
+    Тест сохранения списка словарей с перезаписью
     """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-    vacancies = [create_vacancy_1, create_vacancy_2]
-    JSONSaver.save_to_file_rw(vacancies)
-    assert test_file.exists()
-    with open(test_file, "r", encoding="utf-8") as file:
+    json_saver.save_to_file_rw([sample_vacancy_dict])
+    with open(json_saver._JSONSaver__file_name, "r", encoding="utf-8") as file:
         data = json.load(file)
+    assert data == [sample_vacancy_dict]
+
+
+def test_save_to_file_rw_with_vacancies(json_saver, sample_vacancy):
+    """
+    Тест сохранения списка вакансий с перезаписью
+    """
+    json_saver.save_to_file_rw([sample_vacancy])
+    with open(json_saver._JSONSaver__file_name, "r", encoding="utf-8") as file:
+        data = json.load(file)
+    assert len(data) == 1
+    assert data[0]["name"] == "Python Developer"
+
+
+def test_save_to_file_rw_type_error(json_saver):
+    """
+    Тест вызова TypeError при неверном типе данных
+    """
+    with pytest.raises(TypeError):
+        json_saver.save_to_file_rw(["invalid_data"])
+
+
+def test_save_to_file_type_error(json_saver):
+    """
+    Тест вызова TypeError при неверном типе данных
+    """
+    with pytest.raises(TypeError):
+        json_saver.save_to_file(["invalid_data"])
+
+
+def test_save_to_file_dict(json_saver, sample_vacancy_dict):
+    """
+    Тест добавления данных в файл (словарь)
+    """
+    json_saver.save_to_file_rw([sample_vacancy_dict])
+
+    new_vacancy = {
+        "name": "Java Developer",
+        "alternate_url": "https://example.com/java",
+        "salary": {"from": 120000, "currency": "RUR"},
+        "professional_roles": [{"name": "Developer"}],
+        "snippet": {"responsibility": "Write Java code"},
+    }
+    json_saver.save_to_file([new_vacancy])
+
+    with open(json_saver._JSONSaver__file_name, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
     assert len(data) == 2
+    assert data[0]["name"] == "Python Developer"
+    assert data[1]["name"] == "Java Developer"
+
+
+def test_save_to_file_vacancy(json_saver, vacancies_list):
+    """
+    Тест добавления данных в файл (экземпляр класса Vacancy)
+    """
+    json_saver.save_to_file_rw(vacancies_list)
+
+    json_saver.save_to_file(vacancies_list)
+
+    with open(json_saver._JSONSaver__file_name, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    assert len(data) == 8
     assert data[0]["name"] == "Python Dev"
     assert data[1]["name"] == "Java Dev"
 
 
-def test_add_vacancy(create_vacancy_1, setup_test_file):
+def test_add_vacancy(json_saver, sample_vacancy):
     """
-    Тест добавления вакансии
+    Тест добавления одной вакансии
     """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-    JSONSaver.add_vacancy(create_vacancy_1)
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
+    json_saver.add_vacancy(sample_vacancy)
+    data = json_saver.load_from_file()
     assert len(data) == 1
-    assert data[0]["name"] == "Python Dev"
+    assert data[0]["name"] == "Python Developer"
 
 
-def test_delete_vacancy(create_vacancy_1, setup_test_file):
+def test_delete_vacancy(json_saver, sample_vacancy):
     """
     Тест удаления вакансии
     """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-    JSONSaver.add_vacancy(create_vacancy_1)
-    JSONSaver.delete_vacancy(create_vacancy_1)
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
-    assert len(data) == 0
-
-
-def test_delete_vacancy_value_error(create_data, setup_test_file):
-    """
-    Тест удаления несуществующей вакансии
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    with open(test_file, "w", encoding="utf-8") as file:
-        json.dump(create_data, file, ensure_ascii=False, indent=4)  # type: ignore
-
-    non_existent_vacancy = Vacancy(
-        name="C++ Dev",
-        url="https://example.net",
-        salary=150000,
-        currency="EUR",
-        professional_roles="Backend",
-        responsibility="Code",
-    )
-
-    try:
-        JSONSaver.delete_vacancy(non_existent_vacancy)
-    except ValueError:
-        assert False
-
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
-    assert len(data) == 2
-    assert data[0]["name"] == "Python Dev"
-    assert data[1]["name"] == "Java Dev"
-
-
-def test_load_from_file(create_data, setup_test_file):
-    """
-    Тест загрузки данных из файла
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    with open(test_file, "w", encoding="utf-8") as file:
-        json.dump(create_data, file, ensure_ascii=False, indent=4)  # type: ignore
-    loaded_data = JSONSaver.load_from_file()
-    assert len(loaded_data) == 2
-    assert loaded_data[0]["name"] == "Python Dev"
-    assert loaded_data[1]["name"] == "Java Dev"
-
-
-def test_load_from_file_invalid_json(setup_test_file):
-    """
-    Тест загрузки данных из файла с некорректным JSON
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    with open(test_file, "w", encoding="utf-8") as file:
-        file.write("invalid_json_data")
-
-    loaded_data = JSONSaver.load_from_file()
-    assert isinstance(loaded_data, list)
-    assert len(loaded_data) == 0
-
-
-def test_save_to_file_success(create_vacancy_1, create_vacancy_2, setup_test_file):
-    """
-    Тест успешного добавления данных в файл
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    JSONSaver.save_to_file([create_vacancy_1, create_vacancy_2])
-
-    assert test_file.exists()
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
-    assert len(data) == 2
-    assert data[0]["name"] == "Python Dev"
-    assert data[1]["name"] == "Java Dev"
-
-
-def test_save_to_file_with_empty_list(setup_test_file):
-    """
-    Тест добавления пустого списка в файл
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    JSONSaver.save_to_file([])
-
-    assert test_file.exists()
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
-    assert len(data) == 0
-
-
-def test_save_to_file_invalid_data_type(setup_test_file):
-    """
-    Тест обработки исключения при некорректном типе данных
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    invalid_data = [123, "string", None]
-    try:
-        JSONSaver.save_to_file(invalid_data)  # type: ignore
-    except TypeError as e:
-        assert str(e) == "Тип входных данных не соответствует требованиям"
-    else:
-        assert False
-
-
-def test_save_to_file_rw_invalid_data_type(setup_test_file):
-    """
-    Тест обработки исключения при некорректном типе данных
-    """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
-
-    invalid_data = [123, "string", None]
-    try:
-        JSONSaver.save_to_file_rw(invalid_data)  # type: ignore
-    except TypeError as e:
-        assert str(e) == "Тип входных данных не соответствует требованиям"
-    else:
-        assert False
-
-
-def test_save_to_file_nonexistent_file(create_vacancy_1):
-    """
-    Тест создания нового файла при его отсутствии
-    """
-    test_file = Path("nonexistent_file.json")
-    JSONSaver.file_name = test_file
-
-    if test_file.exists():
-        test_file.unlink()
-
-    JSONSaver.save_to_file([create_vacancy_1])
-
-    assert test_file.exists()
-
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
+    json_saver.add_vacancy(sample_vacancy)
+    data = json_saver.load_from_file()
     assert len(data) == 1
-    assert data[0]["name"] == "Python Dev"
 
-    test_file.unlink()
+    json_saver.delete_vacancy(sample_vacancy)
+    data = json_saver.load_from_file()
+    assert len(data) == 0
 
 
-def test_save_to_file_existing_data(create_vacancy_1, setup_test_file):
+def test_delete_nonexistent_vacancy(json_saver, sample_vacancy, capsys):
     """
-    Тест добавления данных в существующий файл
+    Тест попытки удаления несуществующей вакансии
     """
-    test_file = setup_test_file
-    JSONSaver.file_name = test_file
+    json_saver.delete_vacancy(sample_vacancy)
+    captured = capsys.readouterr()
+    assert "Элемент для удаления не найден" in captured.out
 
-    initial_data = [
-        {
-            "name": "Initial Vacancy",
-            "alternate_url": "https://example.com",
-            "salary": {"from": 50000, "currency": "RUR"},
-        }
-    ]
-    with open(test_file, "w", encoding="utf-8") as file:
-        json.dump(initial_data, file, ensure_ascii=False, indent=4)  # type: ignore
 
-    JSONSaver.save_to_file([create_vacancy_1])
+def test_load_from_file_empty(json_saver):
+    """
+    Тест загрузки из пустого файла
+    """
+    data = json_saver.load_from_file()
+    assert data == []
 
-    with open(test_file, "r", encoding="utf-8") as file:
-        data = json.load(file)
-    assert len(data) == 2
-    assert data[0]["name"] == "Initial Vacancy"
-    assert data[1]["name"] == "Python Dev"
+
+def test_load_from_file_invalid_json(json_saver, tmp_path):
+    """
+    Тест обработки JSONDecodeError
+    """
+    invalid_json_file = str(tmp_path / "invalid.json")
+    with open(invalid_json_file, "w", encoding="utf-8") as file:
+        file.write("{invalid json}")
+
+    saver = JSONSaver(invalid_json_file)
+    result = saver.load_from_file()
+
+    assert result == []
+
+
+def test_load_from_file_non_existent(json_saver):
+    """
+    Тест загрузки из несуществующего файла
+    """
+    non_existent_file = "non_existent.json"
+    saver = JSONSaver(non_existent_file)
+    data = saver.load_from_file()
+    assert data == []
+    if os.path.exists(non_existent_file):
+        os.remove(non_existent_file)
+
+
+def test_obj_vacancy_to_list(json_saver, sample_vacancy):
+    """
+    Тест конвертации вакансий в список словарей
+    """
+    result = json_saver.obj_vacancy_to_list([sample_vacancy])
+    assert isinstance(result, list)
+    assert len(result) == 1
+    assert result[0]["name"] == "Python Developer"
+    assert result[0]["professional_roles"] == [{"name": "Developer"}, {"name": "Backend"}]

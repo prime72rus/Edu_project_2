@@ -1,5 +1,6 @@
 import pytest
 
+from src.utils import print_vacancies
 from src.vacancies import Vacancy
 
 
@@ -21,16 +22,20 @@ def test_vacancy_creation():
     assert vacancy.responsibility == "Developing applications"
 
 
-def test_salary_validation():
+def test_salary_validation(capsys):
     """Тест валидации зарплаты."""
-    assert Vacancy.valid_salary(None) == 0
-    assert Vacancy.valid_salary(50000) == 50000
+    result = Vacancy("Python Dev", "https://example.com", None, "RUR", "Backend", "Developing applications")
+    print_vacancies([result])
+    captured = capsys.readouterr()
+    assert "Зарплата: 0 RUR" in captured.out
 
 
-def test_currency_validation():
+def test_currency_validation(capsys):
     """Тест валидации валюты."""
-    assert Vacancy.valid_currency(None) == "Не указано"
-    assert Vacancy.valid_currency("USD") == "USD"
+    result = Vacancy("Python Dev", "https://example.com", 5000, None, "Backend", "Developing applications")
+    print_vacancies([result])
+    captured = capsys.readouterr()
+    assert "5000 Не указано" in captured.out
 
 
 def test_string_representation():

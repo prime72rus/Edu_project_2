@@ -7,14 +7,8 @@ class Vacancy:
     """
     Класс содержащий информацию о вакансии
     """
-    __slots__ = (
-                    "name",
-                    "url",
-                    "salary",
-                    "currency",
-                    "professional_roles",
-                    "responsibility"
-                 )
+
+    __slots__ = ("name", "url", "salary", "currency", "professional_roles", "responsibility")
 
     def __init__(
         self, name: str, url: str, salary: int, currency: str, professional_roles: str, responsibility: str

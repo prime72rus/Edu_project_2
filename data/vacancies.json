@@ -1,25 +1,57 @@
 [
     {
-        "name": "QA-инженер",
-        "alternate_url": "https://hh.ru/vacancy/118807686",
+        "name": "ML engineer (middle+)",
+        "alternate_url": "https://hh.ru/vacancy/118910394",
         "salary": {
-            "from": 150000,
+            "from": 500000,
             "currency": "RUR"
         },
         "professional_roles": [
             {
-                "name": "Тестировщик"
+                "name": "Дата-сайентист"
             }
         ],
         "snippet": {
-            "responsibility": "Выполнение ручного функционального тестирования интерфейсов (frontend) и REST API (backend). Проведение регрессионного тестирования, нагрузочных тестов. Развертывание ПО на тестовых стендах..."
+            "responsibility": "Разработка, обучение и оптимизация нейросетевых моделей для задач компьютерного зрения (обнаружение объектов, сегментация, классификация с видеопоток). Подготовка данных: контроль разметки..."
         }
     },
     {
-        "name": "Frontend Developer/React",
-        "alternate_url": "https://hh.ru/vacancy/118807677",
+        "name": "Руководитель разработки (СТО)",
+        "alternate_url": "https://hh.ru/vacancy/118899234",
         "salary": {
-            "from": 0,
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Другое"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Влияние на процессы: У нас вы сможете не только выполнять задачи, но и активно участвовать в формировании процессов, внося свой..."
+        }
+    },
+    {
+        "name": "Руководитель управления аналитики",
+        "alternate_url": "https://hh.ru/vacancy/118752543",
+        "salary": {
+            "from": 350000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Руководитель отдела аналитики"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Выстраивать стратегию, цели, дорожной карты управления аналитики. Управлять командой аналитиков: найм новых сотрудников, развитие и обучение, обеспечение мотивации и вовлеченности..."
+        }
+    },
+    {
+        "name": "Python developer",
+        "alternate_url": "https://hh.ru/vacancy/118811735",
+        "salary": {
+            "from": 345000,
             "currency": "RUR"
         },
         "professional_roles": [
@@ -31,23 +63,23 @@
             }
         ],
         "snippet": {
-            "responsibility": "Осознанно использовали Redux с middlewares и high-order addons (redux-api, redux-saga, redux-*). Премии за привлечение новых сотрудников и..."
+            "responsibility": "Разработка и поддержка микросервисной архитектуры. -Работа с базами данных для эффективного хранения и обработки данных. -Написание и поддержка юнит-тестов. -"
         }
     },
     {
-        "name": "Тестировщик / QA инженер",
-        "alternate_url": "https://hh.ru/vacancy/117161804",
+        "name": "Специалист по IT",
+        "alternate_url": "https://hh.ru/vacancy/118279002",
         "salary": {
-            "from": 0,
+            "from": 300000,
             "currency": "RUR"
         },
         "professional_roles": [
             {
-                "name": "Тестировщик"
+                "name": "Системный инженер"
             }
         ],
         "snippet": {
-            "responsibility": "Проведение E2E, функционального, регрессионного тестирования frontend-приложений. Разработка, запуск и поддержка автотестов на JavaScript (Cypress) для web-приложений. "
+            "responsibility": "Не указано"
         }
     }
 ]
