@@ -9,7 +9,6 @@ from src.exceptions import RequestsAPIError
 class HeadHunterAPI(AbstractAPI):
     """
     Класс для работы с API HeadHunter
-    Класс Parser является родительским классом, который вам необходимо реализовать
     """
 
     def __init__(self) -> None:
