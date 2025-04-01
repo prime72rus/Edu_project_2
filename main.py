@@ -15,7 +15,7 @@ def main() -> None:
     salary_range = input("Введите диапазон зарплат (Пример: 100000 - 150000): ")
 
     hh_api = HeadHunterAPI()
-    hh_vacancies = hh_api.get_vacancies(search_query)
+    hh_vacancies = hh_api.get_data(search_query)
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
     try:

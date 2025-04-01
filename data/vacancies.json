@@ -1,25 +1,25 @@
 [
     {
-        "name": "ML engineer (middle+)",
-        "alternate_url": "https://hh.ru/vacancy/118910394",
+        "name": "Главный инженер производства",
+        "alternate_url": "https://hh.ru/vacancy/118401121",
         "salary": {
-            "from": 500000,
+            "from": 250000,
             "currency": "RUR"
         },
         "professional_roles": [
             {
-                "name": "Дата-сайентист"
+                "name": "Начальник производства"
             }
         ],
         "snippet": {
-            "responsibility": "Разработка, обучение и оптимизация нейросетевых моделей для задач компьютерного зрения (обнаружение объектов, сегментация, классификация с видеопоток). Подготовка данных: контроль разметки..."
+            "responsibility": "Руководство деятельностью Технической Службы (Служба Главного Энергетика, Служба Главного механика, <highlighttext>АСУ</highlighttext> <highlighttext>ТП</highlighttext>). Организация правильной эксплуатации и технического обслуживания производственного и..."
         }
     },
     {
-        "name": "Руководитель разработки (СТО)",
-        "alternate_url": "https://hh.ru/vacancy/118899234",
+        "name": "Инженер АСУ ТП",
+        "alternate_url": "https://hh.ru/vacancy/118810100",
         "salary": {
-            "from": 500000,
+            "from": 227000,
             "currency": "RUR"
         },
         "professional_roles": [
@@ -28,58 +28,39 @@
             }
         ],
         "snippet": {
-            "responsibility": "Влияние на процессы: У нас вы сможете не только выполнять задачи, но и активно участвовать в формировании процессов, внося свой..."
+            "responsibility": "Эксплуатация и внедрение, разработка мероприятий по повышению надежности работы КИП и <highlighttext>АСУ</highlighttext> <highlighttext>ТП</highlighttext>. - Настройка, ремонт и техническое обслуживание <highlighttext>АСУ</highlighttext> <highlighttext>ТП</highlighttext>..."
         }
     },
     {
-        "name": "Руководитель управления аналитики",
-        "alternate_url": "https://hh.ru/vacancy/118752543",
+        "name": "Инженер АСУ ТП",
+        "alternate_url": "https://hh.ru/vacancy/117491157",
         "salary": {
-            "from": 350000,
+            "from": 200000,
             "currency": "RUR"
         },
         "professional_roles": [
             {
-                "name": "Руководитель отдела аналитики"
+                "name": "Инженер ПНР"
             }
         ],
         "snippet": {
-            "responsibility": "Выстраивать стратегию, цели, дорожной карты управления аналитики. Управлять командой аналитиков: найм новых сотрудников, развитие и обучение, обеспечение мотивации и вовлеченности..."
+            "responsibility": "Эксплуатация объекта <highlighttext>АСУ</highlighttext> <highlighttext>ТП</highlighttext> (малая энергетика). Ведение эксплуатационной документации. Корректировка проектов SCADA (преимущественно MasterSCADA 4D). Корректировка проектов на ПЛК..."
         }
     },
     {
-        "name": "Python developer",
-        "alternate_url": "https://hh.ru/vacancy/118811735",
+        "name": "Ведущий инженер-программист АСУ ТП",
+        "alternate_url": "https://hh.ru/vacancy/117880121",
         "salary": {
-            "from": 345000,
+            "from": 170000,
             "currency": "RUR"
         },
         "professional_roles": [
             {
-                "name": "Программист"
-            },
-            {
-                "name": "разработчик"
+                "name": "Инженер по эксплуатации"
             }
         ],
         "snippet": {
-            "responsibility": "Разработка и поддержка микросервисной архитектуры. -Работа с базами данных для эффективного хранения и обработки данных. -Написание и поддержка юнит-тестов. -"
-        }
-    },
-    {
-        "name": "Специалист по IT",
-        "alternate_url": "https://hh.ru/vacancy/118279002",
-        "salary": {
-            "from": 300000,
-            "currency": "RUR"
-        },
-        "professional_roles": [
-            {
-                "name": "Системный инженер"
-            }
-        ],
-        "snippet": {
-            "responsibility": "Не указано"
+            "responsibility": "Разработка, тестирование, внедрение и эксплуатация ПО АСУТП как нижнего уровня (PLC SiemensSimatic S7), так и верхнего - HMI (SCADA) на..."
         }
     }
 ]
