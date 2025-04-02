@@ -1,0 +1,340 @@
+[
+    {
+        "name": "ML engineer (middle+)",
+        "alternate_url": "https://hh.ru/vacancy/118910394",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Дата-сайентист"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Разработка, обучение и оптимизация нейросетевых моделей для задач компьютерного зрения (обнаружение объектов, сегментация, классификация с видеопоток). Подготовка данных: контроль разметки..."
+        }
+    },
+    {
+        "name": "Руководитель разработки (СТО)",
+        "alternate_url": "https://hh.ru/vacancy/118899234",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Другое"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Влияние на процессы: У нас вы сможете не только выполнять задачи, но и активно участвовать в формировании процессов, внося свой..."
+        }
+    },
+    {
+        "name": "Web-мастер",
+        "alternate_url": "https://hh.ru/vacancy/118930949",
+        "salary": {
+            "from": 500000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Как маркет-менеджер — занимается анализом рынка, разрабатывает концепцию, подбирает средства. Как контент-менеджер — отвечает за размещаемую на сайте информацию. "
+        }
+    },
+    {
+        "name": "Image Quality инженер",
+        "alternate_url": "https://hh.ru/vacancy/118963486",
+        "salary": {
+            "from": 500000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Другое"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Настройка конвейера обработки изображений на существующем Digital Signal Processor в real-time системах на ARM. Подбор и тестирование оптики под..."
+        }
+    },
+    {
+        "name": "Senior QA (FinTech)",
+        "alternate_url": "https://hh.ru/vacancy/118416373",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Тестировщик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Управление командой тестирования: стратегическое планирование и распределение задач, мотивация, оценка производительности, обучение и развитие сотрудников. - Оптимизация процессов: внедрение лучших практик..."
+        }
+    },
+    {
+        "name": "SOC Аналитик L2",
+        "alternate_url": "https://hh.ru/vacancy/117948206",
+        "salary": {
+            "from": 500000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Специалист по информационной безопасности"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Организация, сопровождение подключения клиентов к сервису SOC, ведение внутренней документации по подключению. Анализ инцидентов, оценка их последствий и выработка рекомендаций..."
+        }
+    },
+    {
+        "name": "Middle Go/Python разработчик (M1-M2)",
+        "alternate_url": "https://hh.ru/vacancy/118546999",
+        "salary": {
+            "from": 500000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Участие в проектирование архитектуры. Разработка нового и доработка существующего функционала. Написание unit тестов, тестирование кода. Менторство junior разработчиков."
+        }
+    },
+    {
+        "name": "Руководитель отдела разработки (Python, Pytorch)",
+        "alternate_url": "https://hh.ru/vacancy/118299190",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Руководитель группы разработки"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Не указано"
+        }
+    },
+    {
+        "name": "Руководитель команды разработки",
+        "alternate_url": "https://hh.ru/vacancy/117311990",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Руководитель группы разработки"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Управление командой разработки. Формирование SRE практик в подразделении, менторинг коллег. Обеспечение качества, надежности и непрерывной работы сервисов в зоне ответственности..."
+        }
+    },
+    {
+        "name": "Senior DevOps Engineer",
+        "alternate_url": "https://hh.ru/vacancy/118114198",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "DevOps-инженер"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Разработка и поддержка CI/CD процессов для обеспечения непрерывной интеграции и доставки. Управление инфраструктурой с использованием инструментов автоматизации. "
+        }
+    },
+    {
+        "name": "Разработчик / AI интегратор",
+        "alternate_url": "https://hh.ru/vacancy/118747452",
+        "salary": {
+            "from": 500000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Вакансия: AI- интегратор для оптимизации бизнес-процессов в Образовательном сегменте. ⁠Интеграция различных систем, таких как системы тестирования и аналитики данных. "
+        }
+    },
+    {
+        "name": "Аналитик по маркетинговому моделированию (MMM) (взаимодействие с тайзоной PST, UTC-8)",
+        "alternate_url": "https://hh.ru/vacancy/118057026",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "BI-аналитик"
+            },
+            {
+                "name": "аналитик данных"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Improvado – ведущий поставщик маркетинговых данных и AI-инструментов для маркетинговой аналитики. Мы помогаем компаниям собирать, анализировать и визуализировать данные из..."
+        }
+    },
+    {
+        "name": "IT специалист (Data-Analyst,Security Engineer,Database Administrator)",
+        "alternate_url": "https://hh.ru/vacancy/118407037",
+        "salary": {
+            "from": 500000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Дата-сайентист"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Управление и анализ баз данных (реляционные и NoSQL). Проектирование и оптимизация структуры баз данных. Разработка и внедрение мер по обеспечению..."
+        }
+    },
+    {
+        "name": "MLOps Engineer",
+        "alternate_url": "https://hh.ru/vacancy/117194098",
+        "salary": {
+            "from": 500000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "DevOps-инженер"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Deploy scalable, production-ready ML services with optimized infrastructure and auto-scaling Kubernetes clusters, create Helm templates for rapid Kubernetes..."
+        }
+    },
+    {
+        "name": "Инженер встраиваемых систем",
+        "alternate_url": "https://hh.ru/vacancy/118632773",
+        "salary": {
+            "from": 487500,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Программист"
+            },
+            {
+                "name": "разработчик"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Разработка и сопровождение программного обеспечения для встраиваемых систем. Работа с сетевыми протоколами и мобильными сетями. Анализ и оптимизация электрических схем..."
+        }
+    },
+    {
+        "name": "SRE-инженер",
+        "alternate_url": "https://hh.ru/vacancy/114965929",
+        "salary": {
+            "from": 460000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "DevOps-инженер"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Быть экспертом по направлению стабильности в продуктовой команде: консультировать команду по надёжности и стабильности, анализировать текущие процессы, предлагать новые подходы..."
+        }
+    },
+    {
+        "name": "Руководитель департамента риск-менеджмента",
+        "alternate_url": "https://hh.ru/vacancy/118240329",
+        "salary": {
+            "from": 450000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Комплаенс-менеджер"
+            }
+        ],
+        "snippet": {
+            "responsibility": "глубокий анализ финансового положения, анализ бухгалтерской отчетности контрагентов по сделкам, несущим в себе кредитный риск: заемщиков, поручителей, залогодателей, дебиторов, в..."
+        }
+    },
+    {
+        "name": "DevOps инженер",
+        "alternate_url": "https://hh.ru/vacancy/118997485",
+        "salary": {
+            "from": 450000,
+            "currency": "KZT"
+        },
+        "professional_roles": [
+            {
+                "name": "Специалист технической поддержки"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Автоматизация процессов: Разработка и поддержка автоматизированных CI/CD пайплайнов для сборки, тестирования и деплоя приложений. Мониторинг и управление: Настройка и..."
+        }
+    },
+    {
+        "name": "Lead Data Engineer",
+        "alternate_url": "https://hh.ru/vacancy/117114065",
+        "salary": {
+            "from": 450000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "Дата-сайентист"
+            }
+        ],
+        "snippet": {
+            "responsibility": "Разработка и поддержка пайплайнов обработки данных и машинного обучения на <highlighttext>Python</highlighttext> и Spark. Работа c системами хранения такими как Clickhouse..."
+        }
+    },
+    {
+        "name": "Marketing Data Analyst",
+        "alternate_url": "https://hh.ru/vacancy/117347065",
+        "salary": {
+            "from": 400000,
+            "currency": "RUR"
+        },
+        "professional_roles": [
+            {
+                "name": "BI-аналитик"
+            },
+            {
+                "name": "аналитик данных"
+            }
+        ],
+        "snippet": {
+            "responsibility": "исследование маркетинговых кампаний по клиентским сегментам, каналам привлечения. - веб-активностям и другим метрикам. - оценка эффективности SEO, медийной рекламы, соцсетей, сотрудничества..."
+        }
+    }
+]
