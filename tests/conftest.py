@@ -2,8 +2,14 @@ import os
 
 import pytest
 
+from src.external_api_hh import HeadHunterAPI
 from src.json_saver import JSONSaver
 from src.vacancies import Vacancy
+
+
+@pytest.fixture
+def hh_api():
+    return HeadHunterAPI()
 
 
 @pytest.fixture
